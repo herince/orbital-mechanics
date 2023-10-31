@@ -1,2 +1,1 @@
-# orbital-mechanics
-Random scripts and experiments
+https://ai-solutions.com/_freeflyeruniversityguide/
