@@ -33,12 +33,12 @@ def hohmannTransfer(smaParking, smaTarget):
     print("Delta V1: {0:.4f}km/s".format(deltaV1 / KM))
 
     # Maneuver 2
-    vtransapogee = getVElliptic(smaTransfer, smaTarget)
-    vtar = getVCircular(smaTarget)
-    deltaV2 = vtar - vtransapogee
+    vTransferApogee = getVElliptic(smaTransfer, smaTarget)
+    vTarget = getVCircular(smaTarget)
+    deltaV2 = vTarget - vTransferApogee
 
-    print("V transfer - apogee: {0:.4f}km/s".format(vtransapogee / KM))
-    print("V target: {0:.4f}km/s".format(vtar / KM))
+    print("V transfer - apogee: {0:.4f}km/s".format(vTransferApogee / KM))
+    print("V target: {0:.4f}km/s".format(vTarget / KM))
     print("Delta V2: {0:.4f}km/s".format(deltaV2 / KM))
 
     deltaV = np.abs(deltaV1) + np.abs(deltaV2);
@@ -73,11 +73,11 @@ def biellipticTransfer(smaParking, smaTarget, f):
 
     # Maneuver 3
     vTrans2Perigee = getVElliptic(smaTrans2, smaTarget)
-    vtar = getVCircular(smaTarget)
-    deltaV3 = vtar - vTranP2perigee
+    vTarget = getVCircular(smaTarget)
+    deltaV3 = vTarget - vTrans2Perigee
 
     print("V transfer 2 - perigee: {0:.4f}km/s".format(vTrans2Perigee / KM))
-    print("V target: {0:.4f}km/s".format(vtar / KM))
+    print("V target: {0:.4f}km/s".format(vTarget / KM))
     print("Delta V3: {0:.4f}km/s".format(deltaV3 / KM)) 
 
     deltaV = np.abs(deltaV1) + np.abs(deltaV2) + np.abs(deltaV3);
